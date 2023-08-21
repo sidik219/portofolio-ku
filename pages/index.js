@@ -71,7 +71,7 @@ export default function Home() {
           <div className='relative bg-gray-50 dark:bg-slate-900 pattern'>
             <nav className='z-20 flex justify-around gap-4 border-t border-gray-200 bg-white/50 p-2.5 shadow-lg backdrop-blur-lg dark:border-slate-600/60 dark:bg-slate-800/50 fixed bottom-5 left-5 right-5 md:bottom-5 md:left-80 md:right-80 min-h-[auto] flex-row rounded-lg border'>
               {/* Home */}
-              <a href='#home' className='flex h-16 w-16 flex-col items-center justify-center gap-1 text-[#19212a] dark:text-white'>
+              <a href='#home' className='flex aspect-square min-h-[32px] w-16 flex-col items-center justify-center gap-1 rounded-md p-1.5 text-[#19212a] hover:bg-white/30 dark:text-white dark:hover:bg-[#f01c58]'>
                 <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' className='w-6 h-6'>
                   <path stroke-linecap='round' stroke-linejoin='round' d='M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819' />
                 </svg>
