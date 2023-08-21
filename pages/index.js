@@ -66,12 +66,12 @@ export default function Home() {
       {/* Main */}
       <main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-[#19212a]'>
         {/* Section Profil*/}
-        <section className='min-h-screen'>
+        <section id='home' className='min-h-screen'>
           {/* Navbar */}
           <div className='relative bg-gray-50 dark:bg-slate-900 pattern'>
             <nav className='z-20 flex justify-around gap-4 border-t border-gray-200 bg-white/50 p-2.5 shadow-lg backdrop-blur-lg dark:border-slate-600/60 dark:bg-slate-800/50 fixed bottom-5 left-5 right-5 md:bottom-5 md:left-80 md:right-80 min-h-[auto] flex-row rounded-lg border'>
               {/* Home */}
-              <a href='/' className='flex h-16 w-16 flex-col items-center justify-center gap-1 text-[#f01c58] dark:text-white'>
+              <a href='#home' className='flex h-16 w-16 flex-col items-center justify-center gap-1 text-[#f01c58] dark:text-white'>
                 <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' className='w-6 h-6'>
                   <path stroke-linecap='round' stroke-linejoin='round' d='M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819' />
                 </svg>
@@ -152,7 +152,7 @@ export default function Home() {
 
           {/* Profil Image */}
           <div className='relative mx-auto bg-gradient-to-b from-[#eec0a3] rounded-full w-80 h-80 mt-20 overflow-hidden md:w-96 md:h-96' style={{ boxShadow: '5px 5px 5px 0px rgba(191,27,71)' }}>
-            <Image src={shyrly} layout='fill' objectFit='cover' />
+            <Image src={shyrly} layout='fill' objectFit='cover' alt="" />
           </div>
         </section>
 
@@ -181,7 +181,7 @@ export default function Home() {
 
               {/* Frontend */}
               <div className='text-center'>
-                <Image className='mx-auto' src={code} width={100} height={100} />
+                <Image className='mx-auto' src={code} width={100} height={100} alt="" />
                 <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>Frontend</h3>
               </div>
               <div className='flex items-center'>
@@ -325,7 +325,7 @@ export default function Home() {
               
               {/* List Skill */}
               <div className='text-center'>
-                <Image className='mx-auto' src={consulting} width={100} height={100} />
+                <Image className='mx-auto' src={consulting} width={100} height={100} alt="" />
                 <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>List Skill</h3>
               </div>
               <div className='flex items-center'>
@@ -377,7 +377,7 @@ export default function Home() {
 
               {/* List Experience */}
               <div className='text-center'>
-                <Image className='mx-auto' src={design} width={100} height={100} />
+                <Image className='mx-auto' src={design} width={100} height={100} alt="" />
                 <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>Seminar & Workshop</h3>
               </div>
               <div className='flex items-center'>
@@ -424,7 +424,7 @@ export default function Home() {
                 Tech: <span className='text-[#bf1b47]'>CSS</span>, <span className='text-[#bf1b47]'>Javascript</span>, <span className='text-[#bf1b47]'>Bootstrap</span>, <span className='text-[#bf1b47]'>PHP</span>, <span className='text-[#bf1b47]'>MYSQL</span>, <span className='text-[#bf1b47]'>Leaftlet.JS</span>
               </p>
               {/* Img Project */}
-              <Image src={web1} className='rounded-lg object-cover border border-4 border-[#bf1b47]' width={'100%'} height={'100%'} layout='reponsive' />
+              <Image src={web1} className='rounded-lg object-cover border border-4 border-[#bf1b47]' width={'100%'} height={'100%'} layout='reponsive' alt="" />
             </div>
 
             {/* Image 2 */}
@@ -436,7 +436,7 @@ export default function Home() {
                 Tech: <span className='text-[#bf1b47]'>CSS</span>, <span className='text-[#bf1b47]'>Javascript</span>, <span className='text-[#bf1b47]'>Bootstrap</span>, <span className='text-[#bf1b47]'>PHP</span>, <span className='text-[#bf1b47]'>MYSQL</span>, <span className='text-[#bf1b47]'>Leaftlet.JS</span>
               </p>
               {/* Img Project */}
-              <Image src={web2} className='rounded-lg object-cover border border-4 border-[#bf1b47]' width={'100%'} height={'100%'} layout='reponsive' />
+              <Image src={web2} className='rounded-lg object-cover border border-4 border-[#bf1b47]' width={'100%'} height={'100%'} layout='reponsive' alt="" />
             </div>
 
             {/* Image 2 */}
@@ -448,7 +448,7 @@ export default function Home() {
                 Tech: <span className='text-[#bf1b47]'>React.JS</span>, <span className='text-[#bf1b47]'>Vite.JS</span>, <span className='text-[#bf1b47]'>Firebase</span>
               </p>
               {/* Img Project */}
-              <Image src={web3} className='rounded-lg object-cover border border-4 border-[#bf1b47]' width={'100%'} height={'100%'} layout='reponsive' />
+              <Image src={web3} className='rounded-lg object-cover border border-4 border-[#bf1b47]' width={'100%'} height={'100%'} layout='reponsive' alt="" />
             </div>
           </div>
         </section>
