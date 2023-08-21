@@ -127,9 +127,9 @@ export default function Home() {
             <h2 className='text-5xl py-2 text-[#bf1b47] font-medium drop-shadow-md md:text-6xl'>Sidik Mulyana</h2>
             <TypeAnimation
               sequence={[
-                'Web Developer',
+                'My Passion',
                 1000,
-                'Programmer',
+                'Web Developer',
                 1000
               ]}
               wrapper="span"
@@ -139,7 +139,7 @@ export default function Home() {
               className={'dark:text-white'}
             />
             <p className='text-md py-5 leading-8 text-gray-800 md:text-xl max-w-3xl mx-auto dark:text-white'>
-              Halo, saya Sidik Mulyana, seorang Web Developer sekaligus Programmer yang memiliki minat dan semangat dalam mengembangkan solusi digital yang menarik dan fungsional. Saya memiliki pengalaman dan pemahaman yang lumayan luas dalam berbagai aspek pengembangan web dan pemrograman.
+              Halo, saya Sidik Mulyana, seorang Web Developer yang memiliki minat dan semangat dalam mengembangkan solusi digital yang menarik dan fungsional. Saya memiliki pengalaman dan pemahaman yang lumayan luas dalam berbagai aspek pengembangan web dan pemrograman.
             </p>
           </div>
 
