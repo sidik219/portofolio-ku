@@ -408,7 +408,7 @@ export default function Home() {
           {/* Deskripsi Portofolio */}
           <div className='text-center'>
             <h3 className='text-5xl pb-10 text-[#bf1b47] font-medium drop-shadow-md'>Portofolio</h3>
-            <p className='text-md py-5 leading-8 text-gray-800 dark:text-white'>
+            <p className='text-md py-5 leading-8 text-gray-800 md:text-xl max-w-5xl mx-auto dark:text-white'>
               Berikut adalah beberapa hasil project yang sudah dikerjakan bersama team ataupun personal project.
             </p>
           </div>
