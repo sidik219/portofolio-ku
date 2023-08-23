@@ -171,7 +171,7 @@ export default function Home() {
           </div>
 
           {/* Skill */}
-          <div className='grid grid-cols-1 sm:grid-cols-2 gap-8'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 py-10'>
             {/* Bagian Kiri Data Frontend & Backend */}
             <div className='p-11 rounded-xl my-10 dark:bg-white' style={{ boxShadow: '0 8px 30px rgb(0,0,0,0.12)' }}>
               {/* Deskripsi Hard Skill */}
@@ -414,7 +414,7 @@ export default function Home() {
           </div>
 
           {/* Image Project */}
-          <div className='flex flex-col gap-10 py-20 lg:flex-row lg:flex-wrap dark:text-white'>
+          <div className='flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap dark:text-white'>
             {/* Image 1 */}
             <div className='basis-1/3 flex-1'>
               {/* Judul */}
