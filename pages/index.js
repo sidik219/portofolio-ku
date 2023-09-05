@@ -151,7 +151,7 @@ export default function Home() {
           </div>
 
           {/* Profil Image */}
-          <div className='relative mx-auto bg-gradient-to-b from-[#eec0a3] rounded-full w-80 h-80 mt-20 overflow-hidden md:w-96 md:h-96' style={{ boxShadow: '5px 5px 5px 0px rgba(191,27,71)' }}>
+          <div className='relative mx-auto bg-gradient-to-b from-[#eec0a3] rounded-full w-60 h-60 mt-20 overflow-hidden md:w-96 md:h-96' style={{ boxShadow: '5px 5px 5px 0px rgba(191,27,71)' }}>
             <Image src={shyrly} layout='fill' objectFit='cover' alt="" />
           </div>
         </section>
