@@ -424,7 +424,7 @@ export default function Home() {
                 Tech: <span className='text-[#bf1b47]'>CSS</span>, <span className='text-[#bf1b47]'>Javascript</span>, <span className='text-[#bf1b47]'>Bootstrap</span>, <span className='text-[#bf1b47]'>PHP</span>, <span className='text-[#bf1b47]'>MYSQL</span>, <span className='text-[#bf1b47]'>Leaftlet.JS</span>
               </p>
               {/* Img Project */}
-              <Image src={web1} className='rounded-lg object-cover border border-4 border-[#bf1b47]' width={'100%'} height={'100%'} layout='reponsive' alt="" />
+              <Image src={web1} className='rounded-lg object-cover border border-4 border-[#bf1b47] mb-4' width={'100%'} height={'100%'} layout='reponsive' alt="" />
             </div>
 
             {/* Image 2 */}
@@ -436,7 +436,7 @@ export default function Home() {
                 Tech: <span className='text-[#bf1b47]'>CSS</span>, <span className='text-[#bf1b47]'>Javascript</span>, <span className='text-[#bf1b47]'>Bootstrap</span>, <span className='text-[#bf1b47]'>PHP</span>, <span className='text-[#bf1b47]'>MYSQL</span>, <span className='text-[#bf1b47]'>Leaftlet.JS</span>
               </p>
               {/* Img Project */}
-              <Image src={web2} className='rounded-lg object-cover border border-4 border-[#bf1b47]' width={'100%'} height={'100%'} layout='reponsive' alt="" />
+              <Image src={web2} className='rounded-lg object-cover border border-4 border-[#bf1b47] mb-4' width={'100%'} height={'100%'} layout='reponsive' alt="" />
             </div>
 
             {/* Image 2 */}
