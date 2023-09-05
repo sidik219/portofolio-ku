@@ -47,6 +47,10 @@ export default function Home() {
   // Untuk Mode Dark
   const [darkMode, setDarkMode] = useState(false)
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
     <div className={darkMode ? 'dark' : ''}>
       <ScrollToTop
@@ -104,7 +108,7 @@ export default function Home() {
                   <small className='text-center text-xs font-medium'> Portofolio </small>
               </a>
               
-              <span className='flex text-3xl h-16 w-16 flex-col items-center justify-center gap-1 text-[#f01c58] dark:text-white cursor-pointer animate-bounce'>
+              <span className='flex text-3xl h-16 w-16 flex-col items-center justify-center gap-1 text-[#f01c58] dark:text-white cursor-pointer animate-bounce onClick={toggleDarkMode}'>
                 <SiAiqfome onClick={() => setDarkMode(!darkMode)} />
               </span>
             </nav>
@@ -182,7 +186,7 @@ export default function Home() {
               {/* Frontend */}
               <div className='text-center'>
                 <Image className='mx-auto' src={code} width={100} height={100} alt="" />
-                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>Frontend</h3>
+                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md text-gray-800'>Frontend</h3>
               </div>
               <div className='flex items-center'>
                 <BiLogoCss3 className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>CSS</p>
@@ -227,7 +231,7 @@ export default function Home() {
 
               {/* Backend */}
               <div className='text-center'>
-                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>Backend</h3>
+                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md text-gray-800'>Backend</h3>
               </div>
               <div className='flex items-center'>
                 <BiLogoPhp className='text-indigo-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>PHP</p>
@@ -272,7 +276,7 @@ export default function Home() {
 
               {/* Library */}
               <div className='text-center'>
-                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>Library</h3>
+                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md text-gray-800'>Library</h3>
               </div>
               <div className='flex items-center'>
                 <SiLeaflet className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Leaflet.JS</p>
@@ -285,7 +289,7 @@ export default function Home() {
 
               {/* Software Tools */}
               <div className='text-center'>
-                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>Software Tools & Platform </h3>
+                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md text-gray-800'>Software Tools & Platform </h3>
               </div>
               <div className='flex items-center'>
                 <AiFillGithub className='text-gray-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Github</p>
@@ -326,7 +330,7 @@ export default function Home() {
               {/* List Skill */}
               <div className='text-center'>
                 <Image className='mx-auto' src={consulting} width={100} height={100} alt="" />
-                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>List Skill</h3>
+                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md text-gray-800'>List Skill</h3>
               </div>
               <div className='flex items-center'>
                 <AiOutlineComment className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Communication</p>
@@ -378,7 +382,7 @@ export default function Home() {
               {/* List Experience */}
               <div className='text-center'>
                 <Image className='mx-auto' src={design} width={100} height={100} alt="" />
-                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>Seminar & Workshop</h3>
+                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md text-gray-800'>Seminar & Workshop</h3>
               </div>
               <div className='flex items-center'>
                 <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3' /><p className='w-44 mx-auto text-gray-800 font-medium py-1'>Workshop Humanizing Technology with UX Research</p>
