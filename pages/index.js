@@ -432,14 +432,6 @@ export default function Home() {
               <p className='mb-4 md:mb-8 text-md'>
                 Tech: <span className='text-[#bf1b47]'>CSS</span>, <span className='text-[#bf1b47]'>Javascript</span>, <span className='text-[#bf1b47]'>Bootstrap</span>, <span className='text-[#bf1b47]'>PHP</span>, <span className='text-[#bf1b47]'>MYSQL</span>, <span className='text-[#bf1b47]'>Leaftlet.JS</span>
               </p>
-              {/* Informasi */}
-              <div className=''>
-                <div className=''>
-                  <div className=''>
-                    <button className='bg-[#bf1b47] hover:bg-[#f01c58] text-white font-bold py-2 px-4 rounded'>Link Project</button>
-                  </div>
-                </div>
-              </div>
               {/* Img Project */}
               <Image src={web1} className='rounded-lg object-cover border border-4 border-[#bf1b47] mb-4' width={'100%'} height={'100%'} layout='reponsive' alt="" />
             </div>
