@@ -17,7 +17,8 @@ import {
   BiLogoPhp,
   BiLogoJava,
   BiTime,
-  BiArrowFromLeft
+  BiArrowFromLeft,
+  BiLogoSpringBoot
 } from 'react-icons/bi'
 import {
   SiVite,
@@ -262,6 +263,14 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
+                <BiLogoSpringBoot className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Spring</p>
+                <div className='w-3/4'>
+                  <div className='h-6 bg-gray-200 rounded-lg'>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '40%' }}>40%</div>
+                  </div>
+                </div>
+              </div>
+              <div className='flex items-center'>
                 <SiMysql className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>MYSQL</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
@@ -423,6 +432,14 @@ export default function Home() {
               <p className='mb-4 md:mb-8 text-md'>
                 Tech: <span className='text-[#bf1b47]'>CSS</span>, <span className='text-[#bf1b47]'>Javascript</span>, <span className='text-[#bf1b47]'>Bootstrap</span>, <span className='text-[#bf1b47]'>PHP</span>, <span className='text-[#bf1b47]'>MYSQL</span>, <span className='text-[#bf1b47]'>Leaftlet.JS</span>
               </p>
+              {/* Informasi */}
+              <div className=''>
+                <div className=''>
+                  <div className=''>
+                    <button className='bg-[#bf1b47] hover:bg-[#f01c58] text-white font-bold py-2 px-4 rounded'>Link Project</button>
+                  </div>
+                </div>
+              </div>
               {/* Img Project */}
               <Image src={web1} className='rounded-lg object-cover border border-4 border-[#bf1b47] mb-4' width={'100%'} height={'100%'} layout='reponsive' alt="" />
             </div>
