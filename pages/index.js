@@ -489,6 +489,29 @@ export default function Home() {
                   <p className="mt-1 text-md text-gray-500">18 Desember 2021 – Sebagai Panitia Workshop</p>
                 </div>
               </div>
+
+              {/* List Experience */}
+              <div className='text-center'>
+                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>Working</h3>
+              </div>
+              <div className='flex items-center'>
+                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3' /><p className='w-44 mx-auto text-gray-800 font-medium py-1'>Training pemrograman Java with JDBC, JPA, Spring Framework, Database PostgreSQL</p>
+                <div className='w-7/12'>
+                  <p className="mt-1 text-md text-gray-500">Agustus 2023 – Programmer Trainee</p>
+                </div>
+              </div>
+              <div className='flex items-center'>
+                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3' /><p className='w-44 mx-auto text-gray-800 font-medium py-1'>BTPN ARMS, BTPNS Jaga Online, Internal Project</p>
+                <div className='w-7/12'>
+                  <p className="mt-1 text-md text-gray-500">November 2023 – Fullstack Developer</p>
+                </div>
+              </div>
+              <div className='flex items-center'>
+                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3' /><p className='w-44 mx-auto text-gray-800 font-medium py-1'>Ticketing Website, Orca Website, Career Website, Indobeauty Website and ESS APK</p>
+                <div className='w-7/12'>
+                  <p className="mt-1 text-md text-gray-500">Juli 2023 – QA</p>
+                </div>
+              </div>
             </div>
             {/* End Bagian Kanan */}
           </div>
