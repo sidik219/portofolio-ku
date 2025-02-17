@@ -190,7 +190,7 @@ export default function Home() {
             <h1 className='text-xl md:text-2xl font-burtons dark:text-white'>Portofolio Ku</h1>
             <ul className='flex items-center'>
               <li>
-                <a className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-2 rounded-md ml-8 flex items-center' href='../Sidik_Mulyana_Curriculum_Vitae.pdf'>
+                <a className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-2 rounded-md ml-8 flex items-center' href='../Sidik_Mulyana_Curriculum_Vitae.pdf' target='_blank'>
                   <AiFillFilePdf className='mr-1 md:mr-2 text-xl md:text-2xl' />My CV
                 </a>
               </li>
