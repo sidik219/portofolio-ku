@@ -1,45 +1,46 @@
 import Head from 'next/head'
-import React, { useState } from 'react'
-import ScrollToTop from "react-scroll-to-top"
-import { TypeAnimation } from 'react-type-animation'
+import Image from 'next/image'
+import { useState } from 'react'
 import {
-  AiFillFilePdf,
   AiFillFacebook,
-  AiFillLinkedin,
+  AiFillFilePdf,
   AiFillGithub,
+  AiFillLinkedin,
   AiOutlineComment
 } from 'react-icons/ai'
 import {
-  BiLogoCss3,
-  BiLogoJavascript,
-  BiLogoBootstrap,
-  BiLogoTailwindCss,
-  BiLogoPhp,
-  BiLogoJava,
-  BiTime,
   BiArrowFromLeft,
-  BiLogoSpringBoot
+  BiLogoBootstrap,
+  BiLogoCss3,
+  BiLogoJava,
+  BiLogoJavascript,
+  BiLogoPhp,
+  BiLogoSpringBoot,
+  BiLogoTailwindCss,
+  BiTime
 } from 'react-icons/bi'
-import {
-  SiVite,
-  SiMysql,
-  SiLeaflet,
-  SiAiqfome,
-  SiFirebase
-} from 'react-icons/si'
-import { TbBrandNextjs } from 'react-icons/tb'
+import { BsTrello } from 'react-icons/bs'
+import { GiBrain } from 'react-icons/gi'
+import { MdSyncProblem } from 'react-icons/md'
 import {
   RiReactjsFill,
-  RiTeamLine
+  RiTeamLine,
+  RiVuejsFill
 } from 'react-icons/ri'
-import { BsTrello } from 'react-icons/bs';
-import { MdSyncProblem } from 'react-icons/md'
-import { GiBrain } from 'react-icons/gi'
-import Image from 'next/image'
-import shyrly from '../public/rabit.png'
+import {
+  SiAiqfome,
+  SiLeaflet,
+  SiMysql,
+  SiPostgresql,
+  SiSourcetree
+} from 'react-icons/si'
+import { TbBrandNextjs } from 'react-icons/tb'
+import ScrollToTop from "react-scroll-to-top"
+import { TypeAnimation } from 'react-type-animation'
 import code from '../public/code.png'
 import consulting from '../public/consulting.png'
 import design from '../public/design.png'
+import shyrly from '../public/rabit.jpeg'
 import web1 from '../public/web1.png'
 import web2 from '../public/web2.png'
 import web3 from '../public/web3.png'
@@ -47,6 +48,79 @@ import web3 from '../public/web3.png'
 export default function Home() {
   // Untuk Mode Dark
   const [darkMode, setDarkMode] = useState(false)
+
+  // Request Contact
+  const [name, setName]         = useState("")
+  const [email, setEmail]       = useState("")
+  const [message, setMessage]   = useState("")
+
+  const send = async () => {
+    if (name && email && message) {
+      // Discord
+      const discordSend = {
+        content: "Pesan baru dari formulir kontak portofolio.",
+        embeds: [{
+          color: 3447003,
+          title: "Data Kontak Baru",
+          fields: [
+            { name: "Name:", value: name, inline: false },
+            { name: "Email:", value: email, inline: false },
+            { name: "Message", value: message, inline: false }
+          ],
+          footer: { text: "Pesan dikirim melalui formulir kontak." },
+          timestamp: new Date().toISOString()
+        }]
+      }
+
+      // Discord POST
+      const discordPOST = "https://discord.com/api/webhooks/1016571556220121158/4ZSI3CJKVExQzuNZE2-K-SlW0q6amoKbW-2gA7JSj3CWDVt8_eMAh_VBAhlrH4NgShCG"
+      try {
+        await fetch(discordPOST, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(discordSend)
+        })
+
+        alert("Pesan berhasil dikirim ke discord")
+      } catch (err) {
+        alert("Pesan gagal dikirim ke discord")
+        return
+      }
+
+      // Email
+      const emailSend = {
+        to: email,
+        subject: "Pesan baru dari formulir kontak portofolio.",
+        body: `Halo, Anda menerima pesan baru dari formulir kontak:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      }
+
+      // Email POST
+      const emailPOST = "#"
+      try {
+        await fetch(emailPOST, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(emailSend)
+        })
+
+        alert("Pesan berhasil dikirim ke email")
+      } catch (err) {
+        alert("Pesan gagal dikirim ke email")
+        return
+      }
+
+      // Reset Form
+      setName("")
+      setEmail("")
+      setMessage("")
+    } else {
+      alert("Harap lengkapi semua field sebelum mengirim.")
+    }
+  }
 
   return (
     <div className={darkMode ? 'dark' : ''}>
@@ -66,29 +140,21 @@ export default function Home() {
 
       {/* Main */}
       <main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-[#19212a]'>
-        {/* Section Profil*/}
+        {/* Section Profile*/}
         <section id='home' className='min-h-screen'>
           {/* Navbar */}
           <div className='relative bg-gray-50 dark:bg-slate-900 pattern'>
             <nav className='z-20 flex justify-around gap-4 border-t border-gray-200 bg-white/50 p-2.5 shadow-lg backdrop-blur-lg dark:border-slate-600/60 dark:bg-slate-800/50 fixed bottom-5 left-5 right-5 md:bottom-5 md:left-80 md:right-80 min-h-[auto] flex-row rounded-lg border'>
               {/* Home */}
-              <a href='#home' className='flex aspect-square min-h-[32px] w-16 flex-col items-center justify-center gap-1 rounded-md p-1.5 text-[#19212a] hover:bg-white/30 dark:text-white dark:hover:bg-[#f01c58]'>
+              <a href='#home' className='flex aspect-square min-h-[32px] w-16 flex-col items-center justify-center gap-1 rounded-md p-1.5 text-[#f01c58] hover:bg-white/30 dark:text-white dark:hover:bg-[#f01c58]'>
                 <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' className='w-6 h-6'>
                   <path stroke-linecap='round' stroke-linejoin='round' d='M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819' />
                 </svg>
                 <small className='text-xs font-medium'> Home </small>
               </a>
 
-              {/* Education */}
-              <a href='#education' className='flex aspect-square min-h-[32px] w-16 flex-col items-center justify-center gap-1 rounded-md p-1.5 text-[#19212a] hover:bg-white/30 dark:text-white dark:hover:bg-[#f01c58]'>
-                <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' className="w-6 h-6 shrink-0">
-                  <path stroke-linecap='round' stroke-linejoin='round' d='M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z' />
-                </svg>
-                <small className='text-center text-xs font-medium'> Education </small>
-              </a>
-
               {/* Skill & Experience */}
-              <a href='#skill' className='flex aspect-square min-h-[32px] w-16 flex-col items-center justify-center gap-1 rounded-md p-1.5 text-[#19212a] hover:bg-white/30 dark:text-white dark:hover:bg-[#f01c58]'>
+              <a href='#skill' className='flex aspect-square min-h-[32px] w-16 flex-col items-center justify-center gap-1 rounded-md p-1.5 text-[#f01c58] hover:bg-white/30 dark:text-white dark:hover:bg-[#f01c58]'>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 shrink-0">
                   <path stroke-linecap='round' stroke-linejoin='round' d='M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z' />
                 </svg>
@@ -97,12 +163,20 @@ export default function Home() {
               
 
               {/* Portofolio */}
-              <a href='#portofolio' className='flex aspect-square min-h-[32px] w-16 flex-col items-center justify-center gap-1 rounded-md p-1.5 text-[#19212a] hover:bg-white/30 dark:text-white dark:hover:bg-[#f01c58]'>
+              <a href='#portofolio' className='flex aspect-square min-h-[32px] w-16 flex-col items-center justify-center gap-1 rounded-md p-1.5 text-[#f01c58] hover:bg-white/30 dark:text-white dark:hover:bg-[#f01c58]'>
                   <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' className='w-6 h-6 shrink-0'>
                     <path stroke-linecap='round' stroke-linejoin='round' d='M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z' />
                     <path stroke-linecap='round' stroke-linejoin='round' d='M15 12a3 3 0 11-6 0 3 3 0 016 0z' />
                   </svg>
                   <small className='text-center text-xs font-medium'> Portofolio </small>
+              </a>
+
+              {/* Contact */}
+              <a href='#contact' className='flex aspect-square min-h-[32px] w-16 flex-col items-center justify-center gap-1 rounded-md p-1.5 text-[#f01c58] hover:bg-white/30 dark:text-white dark:hover:bg-[#f01c58]'>
+                <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' className="w-6 h-6 shrink-0">
+                  <path stroke-linecap='round' stroke-linejoin='round' d='M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z' />
+                </svg>
+                <small className='text-center text-xs font-medium'> Contact </small>
               </a>
               
               <span className='flex text-3xl h-16 w-16 flex-col items-center justify-center gap-1 text-[#f01c58] dark:text-white cursor-pointer animate-bounce'>
@@ -140,15 +214,15 @@ export default function Home() {
               className={'dark:text-white'}
             />
             <p className='text-md py-5 leading-8 text-gray-800 md:text-xl max-w-3xl mx-auto dark:text-white'>
-              Halo, saya Sidik Mulyana, seorang Web Developer yang memiliki minat dan semangat dalam mengembangkan solusi digital yang menarik dan fungsional. Saya memiliki pengalaman dan pemahaman yang lumayan luas dalam berbagai aspek pengembangan web dan pemrograman.
+              Hello, I’m Sidik Mulyana, a Web Developer with a passion for creating engaging and functional digital solutions. I have considerable experience and a broad understanding of various aspects of web development and programming.
             </p>
           </div>
 
           {/* Social Media */}
           <div className='text-5xl flex justify-center gap-8 text-gray-600 dark:text-white'>
-            <a href="https://web.facebook.com/C.Ber.MG/"><AiFillFacebook /></a>
-            <a href="https://www.linkedin.com/in/sidik-mulyana-0247a524b/"><AiFillLinkedin /></a>
-            <a href="https://github.com/sidik219/"><AiFillGithub /></a>
+            <a href="https://web.facebook.com/C.Ber.MG/" target="_blank"><AiFillFacebook /></a>
+            <a href="https://www.linkedin.com/in/sidik-mulyana-0247a524b/" target="_blank"><AiFillLinkedin /></a>
+            <a href="https://github.com/sidik219/" target="_blank"><AiFillGithub /></a>
           </div>
 
           {/* Profil Image */}
@@ -163,18 +237,18 @@ export default function Home() {
           <div className='text-center '>
             <h3 className='text-5xl pb-10 text-[#bf1b47] font-medium drop-shadow-md'>Skill & Experience</h3>
               <p className='text-md py-5 leading-8 text-gray-800 md:text-xl max-w-5xl mx-auto dark:text-white'>
-              Kemampuan dan pengalaman dalam pengembangan web di berbagai bidang. Di bagian front-end, saya biasa menggunakan <span className='text-[#bf1b47] font-medium'>CSS</span>, <span className='text-[#bf1b47] font-medium'>JavaScript</span>, <span className='text-[#bf1b47] font-medium'>Bootstrap</span>, dan <span className='text-[#bf1b47] font-medium'>Tailwind</span> untuk menciptakan antarmuka pengguna yang menarik. Saya juga mulai terbiasa dalam menggunakan <span className='text-[#bf1b47] font-medium'>React.js</span> untuk aplikasi web modern.
-
-              Sementara di bagian back-end, saya memiliki pengetahuan dalam bahasa pemrograman seperti <span className='text-[#bf1b47] font-medium'>PHP</span> dan <span className='text-[#bf1b47] font-medium'>Java</span>, serta kerja dengan <span className='text-[#bf1b47] font-medium'>Vite.js</span> dan <span className='text-[#bf1b47] font-medium'>Next.js</span>. Saya juga bisa mengelola basis data menggunakan <span className='text-[#bf1b47] font-medium'>Mysql</span>.
-
-              Selain itu, saya memiliki pengalaman dengan pustaka <span className='text-[#bf1b47] font-medium'>Leaflet.js</span> untuk integrasi peta interaktif dan menggunakan alat seperti <span className='text-[#bf1b47] font-medium'>Github</span> dan <span className='text-[#bf1b47] font-medium'>Trello</span> untuk pengelolaan proyek.
+                Skills and experience in web development across various fields. On the front-end, I commonly use <span className='text-[#bf1b47] font-medium'>CSS</span>, <span className='text-[#bf1b47] font-medium'>JavaScript</span>, <span className='text-[#bf1b47] font-medium'>Bootstrap</span>, and <span className='text-[#bf1b47] font-medium'>Tailwind</span> to create engaging user interfaces. 
+                
+                I am also becoming familiar with <span className='text-[#bf1b47] font-medium'>React.js</span> and <span className='text-[#bf1b47] font-medium'>Vue.js</span> for modern web applications. On the back-end, I have knowledge of programming languages such as <span className='text-[#bf1b47] font-medium'>PHP</span> and <span className='text-[#bf1b47] font-medium'>Spring</span>. 
+                
+                I can also manage databases using <span className='text-[#bf1b47] font-medium'>MySQL</span> and <span className='text-[#bf1b47] font-medium'>PostgreSQL</span>. Additionally, I have experience with the <span className='text-[#bf1b47] font-medium'>Leaflet.js</span> library for interactive map integration and use tools like <span className='text-[#bf1b47] font-medium'>GitHub</span>, <span className='text-[#bf1b47] font-medium'>Sourcetree</span>, and <span className='text-[#bf1b47] font-medium'>Trello</span> for project management.
             </p>
           </div>
 
           {/* Skill */}
           <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 py-10'>
             {/* Bagian Kiri Data Frontend & Backend */}
-            <div className='p-11 rounded-xl my-10 dark:bg-white' style={{ boxShadow: '0 8px 30px rgb(0,0,0,0.12)' }}>
+            <div className='p-11 rounded-xl my-10 border-4 border-[#bf1b47] dark:bg-white' style={{ boxShadow: '0 8px 30px rgb(0,0,0,0.12)' }}>
               {/* Deskripsi Hard Skill */}
               <div>
                 <h3 className='text-4xl pb-10 text-[#bf1b47] font-medium text-center drop-shadow-md'>Hard Skill</h3>
@@ -225,10 +299,26 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              <div className='flex items-center'>
+                <RiVuejsFill className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Vue.JS</p>
+                <div className='w-3/4'>
+                  <div className='h-6 bg-gray-200 rounded-lg'>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '50%' }}>50%</div>
+                  </div>
+                </div>
+              </div>
 
               {/* Backend */}
               <div className='text-center'>
                 <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>Backend</h3>
+              </div>
+              <div className='flex items-center'>
+                <TbBrandNextjs className='text-black w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Next.JS</p>
+                <div className='w-3/4'>
+                  <div className='h-6 bg-gray-200 rounded-lg'>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '5%' }}>5%</div>
+                  </div>
+                </div>
               </div>
               <div className='flex items-center'>
                 <BiLogoPhp className='text-indigo-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>PHP</p>
@@ -242,23 +332,7 @@ export default function Home() {
                 <BiLogoJava className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Java</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '35%' }}>35%</div>
-                  </div>
-                </div>
-              </div>
-              <div className='flex items-center'>
-                <SiVite className='text-purple-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Vite.JS</p>
-                <div className='w-3/4'>
-                  <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '35%' }}>35%</div>
-                  </div>
-                </div>
-              </div>
-              <div className='flex items-center'>
-                <TbBrandNextjs className='text-black w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Next.JS</p>
-                <div className='w-3/4'>
-                  <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '5%' }}>5%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '70%' }}>70%</div>
                   </div>
                 </div>
               </div>
@@ -266,7 +340,7 @@ export default function Home() {
                 <BiLogoSpringBoot className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Spring</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '40%' }}>40%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '70%' }}>70%</div>
                   </div>
                 </div>
               </div>
@@ -274,7 +348,15 @@ export default function Home() {
                 <SiMysql className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>MYSQL</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '75%' }}>75%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '80%' }}>80%</div>
+                  </div>
+                </div>
+              </div>
+              <div className='flex items-center'>
+                <SiPostgresql className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>POSTGRESQL</p>
+                <div className='w-3/4'>
+                  <div className='h-6 bg-gray-200 rounded-lg'>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '80%' }}>80%</div>
                   </div>
                 </div>
               </div>
@@ -300,7 +382,15 @@ export default function Home() {
                 <AiFillGithub className='text-gray-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Github</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '50%' }}>50%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '70%' }}>70%</div>
+                  </div>
+                </div>
+              </div>
+              <div className='flex items-center'>
+                <SiSourcetree className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Sourcetree</p>
+                <div className='w-3/4'>
+                  <div className='h-6 bg-gray-200 rounded-lg'>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '70%' }}>70%</div>
                   </div>
                 </div>
               </div>
@@ -312,20 +402,12 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className='flex items-center'>
-                <SiFirebase className='text-yellow-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Firebase</p>
-                <div className='w-3/4'>
-                  <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '5%' }}>5%</div>
-                  </div>
-                </div>
-              </div>
             </div>
             {/* End Bagian Kiri */}
 
             {/* Bagian Kanan Data Soft Skill */}
             {/* Bagian Atas */}
-            <div className='p-11 rounded-xl my-10 dark:bg-white' style={{ boxShadow: '0 8px 30px rgb(0,0,0,0.12)' }}>
+            <div className='p-11 rounded-xl my-10 border-4 border-[#bf1b47] dark:bg-white' style={{ boxShadow: '0 8px 30px rgb(0,0,0,0.12)' }}>
               {/* Bagian Atas */}
               {/* Deskripsi Soft Skill */}
               <div>
@@ -418,7 +500,7 @@ export default function Home() {
           <div className='text-center'>
             <h3 className='text-5xl pb-10 text-[#bf1b47] font-medium drop-shadow-md'>Portofolio</h3>
             <p className='text-md py-5 leading-8 text-gray-800 md:text-xl max-w-5xl mx-auto dark:text-white'>
-              Berikut adalah beberapa hasil project yang sudah dikerjakan bersama team ataupun personal project.
+              The following are some of the results from projects carried out either in teams or as personal projects.
             </p>
           </div>
 
@@ -433,7 +515,27 @@ export default function Home() {
                 Tech: <span className='text-[#bf1b47]'>CSS</span>, <span className='text-[#bf1b47]'>Javascript</span>, <span className='text-[#bf1b47]'>Bootstrap</span>, <span className='text-[#bf1b47]'>PHP</span>, <span className='text-[#bf1b47]'>MYSQL</span>, <span className='text-[#bf1b47]'>Leaftlet.JS</span>
               </p>
               {/* Img Project */}
-              <Image src={web1} className='rounded-lg object-cover border-4 border-[#bf1b47] mb-4' width={'100%'} height={'100%'} layout='reponsive' alt="" />
+              <div className="relative w-full hover:scale-105 duration-300">
+                {/* Gambar */}
+                <Image
+                  src={web1}
+                  className="rounded-lg object-cover border-4 border-[#bf1b47] mb-4"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive"
+                  alt=""
+                />
+                
+                {/* Tombol */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <button className="bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg mx-4">
+                    <a href="#" target="_blank">Live View</a>
+                  </button>
+                  <button className="bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg mx-4">
+                    <a href="https://github.com/sidik219/terumbu_karang" target="_blank">Code View</a>
+                  </button>
+                </div>
+              </div>
             </div>
 
             {/* Image 2 */}
@@ -445,7 +547,27 @@ export default function Home() {
                 Tech: <span className='text-[#bf1b47]'>CSS</span>, <span className='text-[#bf1b47]'>Javascript</span>, <span className='text-[#bf1b47]'>Bootstrap</span>, <span className='text-[#bf1b47]'>PHP</span>, <span className='text-[#bf1b47]'>MYSQL</span>, <span className='text-[#bf1b47]'>Leaftlet.JS</span>
               </p>
               {/* Img Project */}
-              <Image src={web2} className='rounded-lg object-cover border-4 border-[#bf1b47] mb-4' width={'100%'} height={'100%'} layout='reponsive' alt="" />
+              <div className="relative w-full hover:scale-105 duration-300">
+                {/* Gambar */}
+                <Image
+                  src={web2}
+                  className="rounded-lg object-cover border-4 border-[#bf1b47] mb-4"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive"
+                  alt=""
+                />
+                
+                {/* Tombol */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <button className="bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg mx-4">
+                    <a href="#" target="_blank">Live View</a>
+                  </button>
+                  <button className="bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg mx-4">
+                    <a href="https://github.com/sidik219/wisata_bahari" target="_blank">Code View</a>
+                  </button>
+                </div>
+              </div>
             </div>
 
             {/* Image 2 */}
@@ -457,10 +579,119 @@ export default function Home() {
                 Tech: <span className='text-[#bf1b47]'>React.JS</span>, <span className='text-[#bf1b47]'>Vite.JS</span>, <span className='text-[#bf1b47]'>Firebase</span>
               </p>
               {/* Img Project */}
-              <Image src={web3} className='rounded-lg object-cover border-4 border-[#bf1b47]' width={'100%'} height={'100%'} layout='reponsive' alt="" />
+              <div className="relative w-full hover:scale-105 duration-300">
+                {/* Gambar */}
+                <Image
+                  src={web3}
+                  className="rounded-lg object-cover border-4 border-[#bf1b47] mb-4"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive"
+                  alt=""
+                />
+                
+                {/* Tombol */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <button className="bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg mx-4">
+                    <a href="https://sidik219.github.io/sphinx-tof/" target="_blank">Live View</a>
+                  </button>
+                  <button className="bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg mx-4">
+                    <a href="https://github.com/sidik219/sphinx-tof" target="_blank">Code View</a>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
+
+        {/* Section Contact */}
+        <section id='contact' className='pt-20'>
+          {/* Deskripsi Contact */}
+          <div className='text-center'>
+            <h3 className='text-5xl pb-10 text-[#bf1b47] font-medium drop-shadow-md'>Contact Us</h3>
+            <p className='text-md py-5 leading-8 text-gray-800 md:text-xl max-w-5xl mx-auto dark:text-white'>
+              Contact me if you are interested.
+            </p>
+          </div>
+          
+          <div className="relative w-auto my-2 mx-auto py-10">
+            <div className="rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none border-4 border-[#bf1b47]">
+              {/*header*/}
+              <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                  <h3 className="text-2xl font-semibold text-[#19212a] my-1"></h3>
+              </div>
+              {/*body*/}
+              <div className="relative p-6 flex-auto">
+                  <form>
+                      {/* Telpon */}
+                      <div className="-mx-3 md:flex mb-2">
+                          <div className="md:w-full px-3">
+                              <label className="uppercase tracking-wide text-black text-xs font-bold mb-2" htmlFor="name">
+                                  Name
+                              </label>
+                              <input className="w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3" id="name" type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Name" required/>
+                          </div>
+                      </div>
+
+                      {/* Email */}
+                      <div className="-mx-3 md:flex mb-2">
+                          <div className="md:w-full px-3">
+                              <div className='flex'>
+                                  <label className="uppercase tracking-wide text-black text-xs font-bold mb-2 mr-2" htmlFor="email">
+                                      Email
+                                  </label>
+                              </div>
+                              <input className="w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3" id="email" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" required/>
+                          </div>
+                      </div>
+                      
+                      {/* Message */}
+                      <div className="-mx-3 md:flex mb-2">
+                          <div className="md:w-full px-3 mb-6 md:mb-0">
+                              <label className="uppercase tracking-wide text-black text-xs font-bold mb-2" htmlFor="message">
+                                  Message
+                              </label>
+                              <textarea className="w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3" id="message" type="text" value={message} onChange={e => setMessage(e.target.value)} placeholder="Message" required/>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              {/*footer*/}
+              <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                  <button
+                      className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                      type="button"
+                      onClick={send}
+                  >
+                    Send Request
+                  </button>
+              </div>
+              <div>
+                  <label htmlFor="label"></label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer>
+          <div className='w-full py-6 px-4 dark:bg-[#19212a] text-gray-800 md:text-xl max-w-5xl mx-auto dark:text-white'>
+              <div className='max-w-[1450px] max-auto grid lg:grid-cols-2'>
+                  <div className='lg:col-span-2 mx-auto'>
+                      <div className='flex'>
+                          <p>Copyright © {new Date().getFullYear()}</p>
+                      </div>
+                  </div>
+                  <div className='lg:col-span-2 mx-auto'>
+                      <div className='flex'>
+                          <p>Made By. Shyrly</p>
+                          {/* <img className='w-[25px] mx-px bg-transparent' src={Logo} alt="/" />
+                          <p>{process.env.REACT_APP_COPYRIGHT_SACRIFICE}</p> */}
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </footer>
       </main>
     </div>
   )
