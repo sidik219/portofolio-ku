@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   AiFillFacebook,
   AiFillFilePdf,
@@ -49,11 +49,35 @@ export default function Home() {
   // Untuk Mode Dark
   const [darkMode, setDarkMode] = useState(false)
 
-  // Request Contact
-  const [name, setName]         = useState("")
-  const [email, setEmail]       = useState("")
-  const [message, setMessage]   = useState("")
+  // Set Request Contact
+  const [name, setName]                           = useState("")
+  const [email, setEmail]                         = useState("")
+  const [message, setMessage]                     = useState("")
 
+  // Set Progress Bar Animation
+  const [css, setCSS]                             = useState(0)
+  const [javascript, setJavascript]               = useState(0)
+  const [bootstrap, setBootstrap]                 = useState(0)
+  const [tailwind, setTailwind]                   = useState(0)
+  const [reactjs, setReactjs]                     = useState(0)
+  const [vuejs, setVuejs]                         = useState(0)
+  const [nextjs, setNextjs]                       = useState(0)
+  const [php, setPhp]                             = useState(0)
+  const [java, setJava]                           = useState(0)
+  const [spring, setSpring]                       = useState(0)
+  const [mysql, setMysql]                         = useState(0)
+  const [postgresql, setPostgresql]               = useState(0)
+  const [leafletjs, setLeafletjs]                 = useState(0)
+  const [github, setGithub]                       = useState(0)
+  const [sourcetree, setSourcetree]               = useState(0)
+  const [trello, setTrello]                       = useState(0)
+  const [communication, setCommunication]         = useState(0)
+  const [problemSolved, setProblemSolved]         = useState(0)
+  const [teamWork, setTeamWork]                   = useState(0)
+  const [manageTime, setManageTime]               = useState(0)
+  const [criticalThinking, setCriticalThinking]   = useState(0)
+
+  // Send Request With API
   const send = async () => {
     if (name && email && message) {
       // Discord
@@ -121,6 +145,33 @@ export default function Home() {
       alert("Harap lengkapi semua field sebelum mengirim.")
     }
   }
+
+  // Progress Bar Animation
+  useEffect(() => {
+    setTimeout(() => {
+      setCSS(70),
+      setJavascript(55),
+      setBootstrap(75),
+      setTailwind(40),
+      setReactjs(50),
+      setVuejs(50),
+      setNextjs(5),
+      setPhp(75),
+      setJava(70),
+      setSpring(70),
+      setMysql(80),
+      setPostgresql(80),
+      setLeafletjs(35),
+      setGithub(70),
+      setSourcetree(70),
+      setTrello(50),
+      setCommunication(70),
+      setProblemSolved(80),
+      setTeamWork(70),
+      setManageTime(80),
+      setCriticalThinking(85)
+    }, 1000)
+  })
 
   return (
     <div className={darkMode ? 'dark' : ''}>
@@ -263,7 +314,7 @@ export default function Home() {
                 <BiLogoCss3 className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>CSS</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '70%' }}>70%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${css}%`, transition: 'width 1s ease-in-out' }}>{css}%</div>
                   </div>
                 </div>
               </div>
@@ -271,7 +322,7 @@ export default function Home() {
                 <BiLogoJavascript className='text-yellow-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Javascript</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '55%' }}>55%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${javascript}%`, transition: 'width 1s ease-in-out' }}>{javascript}%</div>
                   </div>
                 </div>
               </div>
@@ -279,7 +330,7 @@ export default function Home() {
                 <BiLogoBootstrap className='text-purple-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Bootstrap</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '75%' }}>75%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${bootstrap}%`, transition: 'width 1s ease-in-out' }}>{bootstrap}%</div>
                   </div>
                 </div>
               </div>
@@ -287,7 +338,7 @@ export default function Home() {
                 <BiLogoTailwindCss className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Tailwind</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '40%' }}>40%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${tailwind}%`, transition: 'width 1s ease-in-out' }}>{tailwind}%</div>
                   </div>
                 </div>
               </div>
@@ -295,7 +346,7 @@ export default function Home() {
                 <RiReactjsFill className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>React.JS</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '50%' }}>50%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${reactjs}%`, transition: 'width 1s ease-in-out' }}>{reactjs}%</div>
                   </div>
                 </div>
               </div>
@@ -303,7 +354,7 @@ export default function Home() {
                 <RiVuejsFill className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Vue.JS</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '50%' }}>50%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${vuejs}%`, transition: 'width 1s ease-in-out' }}>{vuejs}%</div>
                   </div>
                 </div>
               </div>
@@ -316,7 +367,7 @@ export default function Home() {
                 <TbBrandNextjs className='text-black w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Next.JS</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '5%' }}>5%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${nextjs}%`, transition: 'width 1s ease-in-out' }}>{nextjs}%</div>
                   </div>
                 </div>
               </div>
@@ -324,7 +375,7 @@ export default function Home() {
                 <BiLogoPhp className='text-indigo-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>PHP</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '75%' }}>75%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${php}%`, transition: 'width 1s ease-in-out' }}>{php}%</div>
                   </div>
                 </div>
               </div>
@@ -332,7 +383,7 @@ export default function Home() {
                 <BiLogoJava className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Java</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '70%' }}>70%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${java}%`, transition: 'width 1s ease-in-out' }}>{java}%</div>
                   </div>
                 </div>
               </div>
@@ -340,7 +391,7 @@ export default function Home() {
                 <BiLogoSpringBoot className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Spring</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '70%' }}>70%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${spring}%`, transition: 'width 1s ease-in-out' }}>{spring}%</div>
                   </div>
                 </div>
               </div>
@@ -348,7 +399,7 @@ export default function Home() {
                 <SiMysql className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>MYSQL</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '80%' }}>80%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${mysql}%`, transition: 'width 1s ease-in-out' }}>{mysql}%</div>
                   </div>
                 </div>
               </div>
@@ -356,7 +407,7 @@ export default function Home() {
                 <SiPostgresql className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>POSTGRESQL</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '80%' }}>80%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${postgresql}%`, transition: 'width 1s ease-in-out' }}>{postgresql}%</div>
                   </div>
                 </div>
               </div>
@@ -369,7 +420,7 @@ export default function Home() {
                 <SiLeaflet className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Leaflet.JS</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '35%' }}>35%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${leafletjs}%`, transition: 'width 1s ease-in-out' }}>{leafletjs}%</div>
                   </div>
                 </div>
               </div>
@@ -382,7 +433,7 @@ export default function Home() {
                 <AiFillGithub className='text-gray-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Github</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '70%' }}>70%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${github}%`, transition: 'width 1s ease-in-out' }}>{github}%</div>
                   </div>
                 </div>
               </div>
@@ -390,7 +441,7 @@ export default function Home() {
                 <SiSourcetree className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Sourcetree</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '70%' }}>70%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${sourcetree}%`, transition: 'width 1s ease-in-out' }}>{sourcetree}%</div>
                   </div>
                 </div>
               </div>
@@ -398,7 +449,7 @@ export default function Home() {
                 <BsTrello className='text-blue-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Trello</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '50%' }}>50%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${trello}%`, transition: 'width 1s ease-in-out' }}>{trello}%</div>
                   </div>
                 </div>
               </div>
@@ -423,7 +474,7 @@ export default function Home() {
                 <AiOutlineComment className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Communication</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '70%' }}>70%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${communication}%`, transition: 'width 1s ease-in-out' }}>{communication}%</div>
                   </div>
                 </div>
               </div>
@@ -431,7 +482,7 @@ export default function Home() {
                 <MdSyncProblem className='text-orange-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Problem Solved</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '80%' }}>80%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${problemSolved}%`, transition: 'width 1s ease-in-out' }}>{problemSolved}%</div>
                   </div>
                 </div>
               </div>
@@ -439,7 +490,7 @@ export default function Home() {
                 <RiTeamLine className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Team Work</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '70%' }}>70%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${teamWork}%`, transition: 'width 1s ease-in-out' }}>{teamWork}%</div>
                   </div>
                 </div>
               </div>
@@ -447,7 +498,7 @@ export default function Home() {
                 <BiTime className='text-gray-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Manage Time</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '80%' }}>80%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${manageTime}%`, transition: 'width 1s ease-in-out' }}>{manageTime}%</div>
                   </div>
                 </div>
               </div>
@@ -455,7 +506,7 @@ export default function Home() {
                 <GiBrain className='text-red-500 w-10 h-10 mr-3'/><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Critical Thinking</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
-                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: '85%' }}>85%</div>
+                    <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${criticalThinking}%`, transition: 'width 1s ease-in-out' }}>{criticalThinking}%</div>
                   </div>
                 </div>
               </div>
