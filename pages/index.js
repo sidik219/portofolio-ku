@@ -35,7 +35,7 @@ import {
   SiSourcetree
 } from 'react-icons/si'
 import { TbBrandNextjs } from 'react-icons/tb'
-import ScrollToTop from "react-scroll-to-top"
+import ScrollToTop from 'react-scroll-to-top'
 import { TypeAnimation } from 'react-type-animation'
 import code from '../public/code.png'
 import consulting from '../public/consulting.png'
@@ -299,7 +299,7 @@ export default function Home() {
           {/* Skill */}
           <div className='grid grid-cols-1 sm:grid-cols-2 gap-8 py-10'>
             {/* Bagian Kiri Data Frontend & Backend */}
-            <div className='p-11 rounded-xl my-10 border-4 border-[#bf1b47] dark:bg-white' style={{ boxShadow: '0 8px 30px rgb(0,0,0,0.12)' }}>
+            <div className='p-11 rounded-xl my-10 border-4 border-[#bf1b47]' style={{ boxShadow: '0 8px 30px rgb(0,0,0,0.12)' }}>
               {/* Deskripsi Hard Skill */}
               <div>
                 <h3 className='text-4xl pb-10 text-[#bf1b47] font-medium text-center drop-shadow-md'>Hard Skill</h3>
@@ -308,10 +308,10 @@ export default function Home() {
               {/* Frontend */}
               <div className='text-center'>
                 <Image className='mx-auto' src={code} width={100} height={100} alt="" />
-                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>Frontend</h3>
+                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md dark:text-white'>Frontend</h3>
               </div>
               <div className='flex items-center'>
-                <BiLogoCss3 className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>CSS</p>
+                <BiLogoCss3 className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>CSS</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${css}%`, transition: 'width 1s ease-in-out' }}>{css}%</div>
@@ -319,7 +319,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <BiLogoJavascript className='text-yellow-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Javascript</p>
+                <BiLogoJavascript className='text-yellow-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Javascript</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${javascript}%`, transition: 'width 1s ease-in-out' }}>{javascript}%</div>
@@ -327,7 +327,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <BiLogoBootstrap className='text-purple-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Bootstrap</p>
+                <BiLogoBootstrap className='text-purple-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Bootstrap</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${bootstrap}%`, transition: 'width 1s ease-in-out' }}>{bootstrap}%</div>
@@ -335,7 +335,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <BiLogoTailwindCss className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Tailwind</p>
+                <BiLogoTailwindCss className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Tailwind</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${tailwind}%`, transition: 'width 1s ease-in-out' }}>{tailwind}%</div>
@@ -343,7 +343,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <RiReactjsFill className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>React.JS</p>
+                <RiReactjsFill className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>React.JS</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${reactjs}%`, transition: 'width 1s ease-in-out' }}>{reactjs}%</div>
@@ -351,7 +351,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <RiVuejsFill className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Vue.JS</p>
+                <RiVuejsFill className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Vue.JS</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${vuejs}%`, transition: 'width 1s ease-in-out' }}>{vuejs}%</div>
@@ -361,10 +361,10 @@ export default function Home() {
 
               {/* Backend */}
               <div className='text-center'>
-                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>Backend</h3>
+                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md dark:text-white'>Backend</h3>
               </div>
               <div className='flex items-center'>
-                <TbBrandNextjs className='text-black w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Next.JS</p>
+                <TbBrandNextjs className='text-black w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Next.JS</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${nextjs}%`, transition: 'width 1s ease-in-out' }}>{nextjs}%</div>
@@ -372,7 +372,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <BiLogoPhp className='text-indigo-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>PHP</p>
+                <BiLogoPhp className='text-indigo-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>PHP</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${php}%`, transition: 'width 1s ease-in-out' }}>{php}%</div>
@@ -380,7 +380,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <BiLogoJava className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Java</p>
+                <BiLogoJava className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Java</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${java}%`, transition: 'width 1s ease-in-out' }}>{java}%</div>
@@ -388,7 +388,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <BiLogoSpringBoot className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Spring</p>
+                <BiLogoSpringBoot className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Spring</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${spring}%`, transition: 'width 1s ease-in-out' }}>{spring}%</div>
@@ -396,7 +396,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <SiMysql className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>MYSQL</p>
+                <SiMysql className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>MYSQL</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${mysql}%`, transition: 'width 1s ease-in-out' }}>{mysql}%</div>
@@ -404,7 +404,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <SiPostgresql className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>POSTGRESQL</p>
+                <SiPostgresql className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>POSTGRESQL</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${postgresql}%`, transition: 'width 1s ease-in-out' }}>{postgresql}%</div>
@@ -414,10 +414,10 @@ export default function Home() {
 
               {/* Library */}
               <div className='text-center'>
-                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>Library</h3>
+                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md dark:text-white'>Library</h3>
               </div>
               <div className='flex items-center'>
-                <SiLeaflet className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Leaflet.JS</p>
+                <SiLeaflet className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Leaflet.JS</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${leafletjs}%`, transition: 'width 1s ease-in-out' }}>{leafletjs}%</div>
@@ -427,10 +427,10 @@ export default function Home() {
 
               {/* Software Tools */}
               <div className='text-center'>
-                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>Software Tools & Platform </h3>
+                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md dark:text-white'>Software Tools & Platform </h3>
               </div>
               <div className='flex items-center'>
-                <AiFillGithub className='text-gray-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Github</p>
+                <AiFillGithub className='text-gray-800 w-10 h-10 mr-3 dark:text-white' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Github</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${github}%`, transition: 'width 1s ease-in-out' }}>{github}%</div>
@@ -438,7 +438,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <SiSourcetree className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Sourcetree</p>
+                <SiSourcetree className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Sourcetree</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${sourcetree}%`, transition: 'width 1s ease-in-out' }}>{sourcetree}%</div>
@@ -446,7 +446,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <BsTrello className='text-blue-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Trello</p>
+                <BsTrello className='text-blue-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Trello</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${trello}%`, transition: 'width 1s ease-in-out' }}>{trello}%</div>
@@ -458,7 +458,7 @@ export default function Home() {
 
             {/* Bagian Kanan Data Soft Skill */}
             {/* Bagian Atas */}
-            <div className='p-11 rounded-xl my-10 border-4 border-[#bf1b47] dark:bg-white' style={{ boxShadow: '0 8px 30px rgb(0,0,0,0.12)' }}>
+            <div className='p-11 rounded-xl my-10 border-4 border-[#bf1b47]' style={{ boxShadow: '0 8px 30px rgb(0,0,0,0.12)' }}>
               {/* Bagian Atas */}
               {/* Deskripsi Soft Skill */}
               <div>
@@ -468,10 +468,10 @@ export default function Home() {
               {/* List Skill */}
               <div className='text-center'>
                 <Image className='mx-auto' src={consulting} width={100} height={100} alt="" />
-                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>List Skill</h3>
+                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md dark:text-white'>List Skill</h3>
               </div>
               <div className='flex items-center'>
-                <AiOutlineComment className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Communication</p>
+                <AiOutlineComment className='text-blue-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Communication</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${communication}%`, transition: 'width 1s ease-in-out' }}>{communication}%</div>
@@ -479,7 +479,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <MdSyncProblem className='text-orange-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Problem Solved</p>
+                <MdSyncProblem className='text-orange-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Problem Solved</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${problemSolved}%`, transition: 'width 1s ease-in-out' }}>{problemSolved}%</div>
@@ -487,7 +487,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <RiTeamLine className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Team Work</p>
+                <RiTeamLine className='text-green-500 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Team Work</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${teamWork}%`, transition: 'width 1s ease-in-out' }}>{teamWork}%</div>
@@ -495,7 +495,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <BiTime className='text-gray-800 w-10 h-10 mr-3' /><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Manage Time</p>
+                <BiTime className='text-gray-800 w-10 h-10 mr-3 dark:text-white' /><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Manage Time</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${manageTime}%`, transition: 'width 1s ease-in-out' }}>{manageTime}%</div>
@@ -503,7 +503,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <GiBrain className='text-red-500 w-10 h-10 mr-3'/><p className='w-40 mx-auto text-gray-800 font-medium py-1'>Critical Thinking</p>
+                <GiBrain className='text-red-500 w-10 h-10 mr-3'/><p className='w-40 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Critical Thinking</p>
                 <div className='w-3/4'>
                   <div className='h-6 bg-gray-200 rounded-lg'>
                     <div className='h-full text-center text-white bg-[#bf1b47] rounded-lg' style={{ width: `${criticalThinking}%`, transition: 'width 1s ease-in-out' }}>{criticalThinking}%</div>
@@ -520,47 +520,47 @@ export default function Home() {
               {/* List Experience */}
               <div className='text-center'>
                 <Image className='mx-auto' src={design} width={100} height={100} alt="" />
-                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>Seminar & Workshop</h3>
+                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md dark:text-white'>Seminar & Workshop</h3>
               </div>
               <div className='flex items-center'>
-                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3' /><p className='w-44 mx-auto text-gray-800 font-medium py-1'>Workshop Humanizing Technology with UX Research</p>
+                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3 dark:text-white' /><p className='w-44 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Workshop Humanizing Technology with UX Research</p>
                 <div className='w-7/12'>
-                  <p className="mt-1 text-md text-gray-500">27 Febuari 2021 – Sebagai Audience</p>
+                  <p className="mt-1 text-md text-gray-500 dark:text-white">27 Febuari 2021 – Sebagai Audience</p>
                 </div>
               </div>
               <div className='flex items-center'>
-                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3' /><p className='w-44 mx-auto text-gray-800 font-medium py-1'>Seminar Aplikasi GoKarang</p>
+                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3 dark:text-white' /><p className='w-44 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Seminar Aplikasi GoKarang</p>
                 <div className='w-7/12'>
-                  <p className="mt-1 text-md text-gray-500">12 April 2021 – Sebagai Web Developer & Presentator</p>
+                  <p className="mt-1 text-md text-gray-500 dark:text-white">12 April 2021 – Sebagai Web Developer & Presentator</p>
                 </div>
               </div>
               <div className='flex items-center'>
-                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3' /><p className='w-44 mx-auto text-gray-800 font-medium py-1'>Workshop Teknologi Masa Depan dalam Intervensi Dini Anak Down Syndrome</p>
+                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3 dark:text-white' /><p className='w-44 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Workshop Teknologi Masa Depan dalam Intervensi Dini Anak Down Syndrome</p>
                 <div className='w-7/12'>
-                  <p className="mt-1 text-md text-gray-500">18 Desember 2021 – Sebagai Panitia Workshop</p>
+                  <p className="mt-1 text-md text-gray-500 dark:text-white">18 Desember 2021 – Sebagai Panitia Workshop</p>
                 </div>
               </div>
 
               {/* List Experience */}
               <div className='text-center'>
-                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md'>Working</h3>
+                <h3 className='text-2xl font-medium pt-16 pb-8 drop-shadow-md dark:text-white'>Working</h3>
               </div>
               <div className='flex items-center'>
-                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3' /><p className='w-44 mx-auto text-gray-800 font-medium py-1'>Training pemrograman Java with JDBC, JPA, Spring Framework, Database PostgreSQL</p>
+                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3 dark:text-white' /><p className='w-44 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Training pemrograman Java with JDBC, JPA, Spring Framework, Database PostgreSQL</p>
                 <div className='w-7/12'>
-                  <p className="mt-1 text-md text-gray-500">Agustus 2023 – Programmer Trainee</p>
+                  <p className="mt-1 text-md text-gray-500 dark:text-white">Agustus 2023 – Programmer Trainee</p>
                 </div>
               </div>
               <div className='flex items-center'>
-                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3' /><p className='w-44 mx-auto text-gray-800 font-medium py-1'>BTPN ARMS, BTPNS Jaga Online, Internal Project</p>
+                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3 dark:text-white' /><p className='w-44 mx-auto text-gray-800 font-medium py-1 dark:text-white'>BTPN ARMS, BTPNS Jaga Online, Internal Project</p>
                 <div className='w-7/12'>
-                  <p className="mt-1 text-md text-gray-500">November 2023 – Fullstack Developer</p>
+                  <p className="mt-1 text-md text-gray-500 dark:text-white">November 2023 – Fullstack Developer</p>
                 </div>
               </div>
               <div className='flex items-center'>
-                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3' /><p className='w-44 mx-auto text-gray-800 font-medium py-1'>Ticketing Website, Orca Website, Career Website, Indobeauty Website and ESS APK</p>
+                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3 dark:text-white' /><p className='w-44 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Ticketing Website, Orca Website, Career Website, Indobeauty Website and ESS APK</p>
                 <div className='w-7/12'>
-                  <p className="mt-1 text-md text-gray-500">Juli 2023 – QA</p>
+                  <p className="mt-1 text-md text-gray-500 dark:text-white">Juli 2023 – QA</p>
                 </div>
               </div>
             </div>
@@ -688,60 +688,59 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="relative w-auto my-2 mx-auto py-10">
-            <div className="rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none border-4 border-[#bf1b47]">
+          <div className='relative w-auto my-2 mx-auto py-10'>
+            <div className='rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none border-4 border-[#bf1b47]'>
               {/*header*/}
-              <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                  <h3 className="text-2xl font-semibold text-[#19212a] my-1"></h3>
+              <div className='flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t'>
+                  <h3 className='text-2xl font-semibold text-[#19212a] my-1'></h3>
               </div>
               {/*body*/}
-              <div className="relative p-6 flex-auto">
+              <div className='relative p-6 flex-auto'>
                   <form>
                       {/* Telpon */}
-                      <div className="-mx-3 md:flex mb-2">
-                          <div className="md:w-full px-3">
-                              <label className="uppercase tracking-wide text-black text-xs font-bold mb-2" htmlFor="name">
+                      <div className='-mx-3 md:flex mb-2'>
+                          <div className='md:w-full px-3'>
+                              <label className='uppercase tracking-wide text-black text-xs font-bold mb-2' htmlFor='name'>
                                   Name
                               </label>
-                              <input className="w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3" id="name" type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Name" required/>
+                              <input className='w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3' id='name' type='text' value={name} onChange={e => setName(e.target.value)} placeholder='Name' required/>
                           </div>
                       </div>
 
                       {/* Email */}
-                      <div className="-mx-3 md:flex mb-2">
-                          <div className="md:w-full px-3">
+                      <div className='-mx-3 md:flex mb-2'>
+                          <div className='md:w-full px-3'>
                               <div className='flex'>
-                                  <label className="uppercase tracking-wide text-black text-xs font-bold mb-2 mr-2" htmlFor="email">
+                                  <label className='uppercase tracking-wide text-black text-xs font-bold mb-2 mr-2' htmlFor='email'>
                                       Email
                                   </label>
                               </div>
-                              <input className="w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3" id="email" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" required/>
+                              <input className='w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3' id='email' type='email' value={email} onChange={e => setEmail(e.target.value)} placeholder='Email' required/>
                           </div>
                       </div>
                       
                       {/* Message */}
-                      <div className="-mx-3 md:flex mb-2">
-                          <div className="md:w-full px-3 mb-6 md:mb-0">
-                              <label className="uppercase tracking-wide text-black text-xs font-bold mb-2" htmlFor="message">
+                      <div className='-mx-3 md:flex mb-2'>
+                          <div className='md:w-full px-3 mb-6 md:mb-0'>
+                              <label className='uppercase tracking-wide text-black text-xs font-bold mb-2' htmlFor='message'>
                                   Message
                               </label>
-                              <textarea className="w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3" id="message" type="text" value={message} onChange={e => setMessage(e.target.value)} placeholder="Message" required/>
+                              <textarea className='w-full bg-gray-200 text-black border border-gray-200 rounded py-1 px-4 mb-3' id='message' type='text' value={message} onChange={e => setMessage(e.target.value)} placeholder='Message' required/>
                           </div>
                       </div>
                   </form>
               </div>
-              {/*footer*/}
-              <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+              <div className='flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b'>
                   <button
-                      className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                      type="button"
+                      className='bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+                      type='button'
                       onClick={send}
                   >
-                    Send Request
+                    Send Message
                   </button>
               </div>
               <div>
-                  <label htmlFor="label"></label>
+                  <label htmlFor='label'></label>
               </div>
             </div>
           </div>
