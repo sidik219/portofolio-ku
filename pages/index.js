@@ -548,19 +548,25 @@ export default function Home() {
               <div className='flex items-center'>
                 <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3 dark:text-white' /><p className='w-44 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Training pemrograman Java with JDBC, JPA, Spring Framework, Database PostgreSQL</p>
                 <div className='w-7/12'>
-                  <p className="mt-1 text-md text-gray-500 dark:text-white">Agustus 2023 – Programmer Trainee</p>
+                  <p className="mt-1 text-md text-gray-500 dark:text-white">Agustus 2023 | Programmer Trainee</p>
                 </div>
               </div>
               <div className='flex items-center'>
                 <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3 dark:text-white' /><p className='w-44 mx-auto text-gray-800 font-medium py-1 dark:text-white'>BTPN ARMS, BTPNS Jaga Online, Internal Project</p>
                 <div className='w-7/12'>
-                  <p className="mt-1 text-md text-gray-500 dark:text-white">November 2023 – Fullstack Developer</p>
+                  <p className="mt-1 text-md text-gray-500 dark:text-white">November 2023 – Oktober 2025 | Fullstack Developer</p>
                 </div>
               </div>
               <div className='flex items-center'>
                 <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3 dark:text-white' /><p className='w-44 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Ticketing Website, Orca Website, Career Website, Indobeauty Website and ESS APK</p>
                 <div className='w-7/12'>
-                  <p className="mt-1 text-md text-gray-500 dark:text-white">Juli 2023 – QA</p>
+                  <p className="mt-1 text-md text-gray-500 dark:text-white">Juli 2024 – Januari 2025 | QA</p>
+                </div>
+              </div>
+              <div className='flex items-center'>
+                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3 dark:text-white' /><p className='w-44 mx-auto text-gray-800 font-medium py-1 dark:text-white'>RFID Integration</p>
+                <div className='w-7/12'>
+                  <p className="mt-1 text-md text-gray-500 dark:text-white">Februari 2025 – Oktober 2025 | Backend Developer</p>
                 </div>
               </div>
             </div>
