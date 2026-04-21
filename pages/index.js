@@ -44,6 +44,7 @@ import shyrly from '../public/rabit.jpeg'
 import web1 from '../public/web1.png'
 import web2 from '../public/web2.png'
 import web3 from '../public/web3.png'
+import web4 from '../public/web4.JPG'
 
 export default function Home() {
   // Untuk Mode Dark
@@ -76,6 +77,9 @@ export default function Home() {
   const [teamWork, setTeamWork]                   = useState(0)
   const [manageTime, setManageTime]               = useState(0)
   const [criticalThinking, setCriticalThinking]   = useState(0)
+
+  // Set Tech Stack
+  const [selectedTech, setSelectedTech] = useState(null);
 
   // Send Request With API
   const send = async () => {
@@ -145,6 +149,32 @@ export default function Home() {
       alert("Harap lengkapi semua field sebelum mengirim.")
     }
   }
+
+  // Tech Stack List
+  const techStacks = {
+    gokarang: {
+      title: 'GoKarang',
+      tech: ['CSS', 'JavaScript', 'Bootstrap', 'PHP', 'MySQL', 'Leaflet.js']
+    },
+    tugasAkhir: {
+      title: 'Tugas Akhir',
+      tech: ['CSS', 'JavaScript', 'Bootstrap', 'PHP', 'MySQL', 'Leaflet.js']
+    },
+    crew: {
+      title: 'Crew Recruitment',
+      tech: ['React.js', 'Vite', 'Firebase']
+    },
+    aiDebug: {
+      title: 'AI Debugging System',
+      tech: {
+        backend: ['Java 17', 'Spring Boot 3', 'Spring Security', 'WebSocket'],
+        frontend: ['Vue.js 3', 'Vite', 'Pinia', 'Chart.js'],
+        ai: ['Groq API', 'OpenAI API', 'Gemini API'],
+        notification: ['Discord Webhook', 'Slack Webhook', 'Telegram Bot'],
+        testing: ['JUnit 5', 'Mockito', 'MockMvc']
+      }
+    }
+  };
 
   // Progress Bar Animation
   useEffect(() => {
@@ -576,112 +606,235 @@ export default function Home() {
 
         {/* Section Soft Skill */}
         <section id='portofolio' className='pt-20'>
-          {/* Deskripsi Portofolio */}
+          {/* Header Portofolio */}
           <div className='text-center'>
-            <h3 className='text-5xl pb-10 text-[#bf1b47] font-medium drop-shadow-md'>Portofolio</h3>
+            <h3 className='text-5xl pb-10 text-[#bf1b47] font-medium drop-shadow-md'>
+              Portofolio
+            </h3>
             <p className='text-md py-5 leading-8 text-gray-800 md:text-xl max-w-5xl mx-auto dark:text-white'>
               The following are some of the results from projects carried out either in teams or as personal projects.
             </p>
           </div>
 
-          {/* Image Project */}
+          {/* Projects Grid */}
           <div className='flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap dark:text-white'>
-            {/* Image 1 */}
+            
+            {/* Project 1 - GoKarang */}
             <div className='basis-1/3 flex-1'>
-              {/* Judul */}
-              <h3 className='text-md md:text-2xl font-medium'>Team Project - GoKarang</h3>
-              {/* Deskripsi Tech */}
-              <p className='mb-4 md:mb-8 text-md'>
-                Tech: <span className='text-[#bf1b47]'>CSS</span>, <span className='text-[#bf1b47]'>Javascript</span>, <span className='text-[#bf1b47]'>Bootstrap</span>, <span className='text-[#bf1b47]'>PHP</span>, <span className='text-[#bf1b47]'>MYSQL</span>, <span className='text-[#bf1b47]'>Leaftlet.JS</span>
-              </p>
-              {/* Img Project */}
-              <div className="relative w-full hover:scale-105 duration-300">
-                {/* Gambar */}
+              <h3 className='text-md md:text-2xl font-medium'>
+                Team Project - GoKarang
+              </h3>
+              <div className='relative w-full hover:scale-105 duration-300'>
                 <Image
                   src={web1}
-                  className="rounded-lg object-cover border-4 border-[#bf1b47] mb-4"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                  alt=""
+                  className='rounded-lg object-cover border-4 border-[#bf1b47] mb-4'
+                  width='100%'
+                  height='100%'
+                  layout='responsive'
+                  alt='GoKarang Project'
                 />
-                
-                {/* Tombol */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg mx-4">
-                    <a href="#" target="_blank">Live View</a>
+                <div className='absolute inset-0 flex items-center justify-center gap-4'>
+                  <button 
+                    className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg transition-colors'
+                    onClick={() => setSelectedTech('gokarang')}
+                  >
+                    Tech Stack
                   </button>
-                  <button className="bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg mx-4">
-                    <a href="https://github.com/sidik219/terumbu_karang" target="_blank">Code View</a>
+                  <button className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg transition-colors'>
+                    <a href='#' target='_blank' rel='noopener noreferrer'>Live View</a>
+                  </button>
+                  <button className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg transition-colors'>
+                    <a href='https://github.com/sidik219/terumbu_karang' target='_blank' rel='noopener noreferrer'>Code View</a>
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* Image 2 */}
+            {/* Project 2 - Tugas Akhir */}
             <div className='basis-1/3 flex-1'>
-              {/* Judul */}
-              <h3 className='text-md md:text-2xl font-medium'>Personal Project - Tugas Akhir</h3>
-              {/* Deskripsi Tech */}
-              <p className='mb-4 md:mb-8 text-md'>
-                Tech: <span className='text-[#bf1b47]'>CSS</span>, <span className='text-[#bf1b47]'>Javascript</span>, <span className='text-[#bf1b47]'>Bootstrap</span>, <span className='text-[#bf1b47]'>PHP</span>, <span className='text-[#bf1b47]'>MYSQL</span>, <span className='text-[#bf1b47]'>Leaftlet.JS</span>
-              </p>
-              {/* Img Project */}
-              <div className="relative w-full hover:scale-105 duration-300">
-                {/* Gambar */}
+              <h3 className='text-md md:text-2xl font-medium'>
+                Personal Project - Tugas Akhir
+              </h3>
+              <div className='relative w-full hover:scale-105 duration-300'>
                 <Image
                   src={web2}
-                  className="rounded-lg object-cover border-4 border-[#bf1b47] mb-4"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                  alt=""
+                  className='rounded-lg object-cover border-4 border-[#bf1b47] mb-4'
+                  width='100%'
+                  height='100%'
+                  layout='responsive'
+                  alt='Tugas Akhir Project'
                 />
-                
-                {/* Tombol */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg mx-4">
-                    <a href="#" target="_blank">Live View</a>
+                <div className='absolute inset-0 flex items-center justify-center gap-4'>
+                  <button 
+                    className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg transition-colors'
+                    onClick={() => setSelectedTech('tugasAkhir')}
+                  >
+                    Tech Stack
                   </button>
-                  <button className="bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg mx-4">
-                    <a href="https://github.com/sidik219/wisata_bahari" target="_blank">Code View</a>
+                  <button className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg transition-colors'>
+                    <a href='#' target='_blank' rel='noopener noreferrer'>Live View</a>
+                  </button>
+                  <button className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg transition-colors'>
+                    <a href='https://github.com/sidik219/wisata_bahari' target='_blank' rel='noopener noreferrer'>Code View</a>
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* Image 2 */}
+            {/* Project 3 - Crew Recruitment */}
             <div className='basis-1/3 flex-1'>
-              {/* Judul */}
-              <h3 className='text-md md:text-2xl font-medium'>Personal Project - Crew Recruitment Purposes</h3>
-              {/* Deskripsi Tech */}
-              <p className='mb-4 md:mb-8 text-md'>
-                Tech: <span className='text-[#bf1b47]'>React.JS</span>, <span className='text-[#bf1b47]'>Vite.JS</span>, <span className='text-[#bf1b47]'>Firebase</span>
-              </p>
-              {/* Img Project */}
-              <div className="relative w-full hover:scale-105 duration-300">
-                {/* Gambar */}
+              <h3 className='text-md md:text-2xl font-medium'>
+                Personal Project - Crew Recruitment
+              </h3>
+              <div className='relative w-full hover:scale-105 duration-300'>
                 <Image
                   src={web3}
-                  className="rounded-lg object-cover border-4 border-[#bf1b47] mb-4"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive"
-                  alt=""
+                  className='rounded-lg object-cover border-4 border-[#bf1b47] mb-4'
+                  width='100%'
+                  height='100%'
+                  layout='responsive'
+                  alt='Crew Recruitment Project'
                 />
-                
-                {/* Tombol */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg mx-4">
-                    <a href="https://sidik219.github.io/sphinx-tof/" target="_blank">Live View</a>
+                <div className='absolute inset-0 flex items-center justify-center gap-4'>
+                  <button 
+                    className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg transition-colors'
+                    onClick={() => setSelectedTech('crew')}
+                  >
+                    Tech Stack
                   </button>
-                  <button className="bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg mx-4">
-                    <a href="https://github.com/sidik219/sphinx-tof" target="_blank">Code View</a>
+                  <button className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg transition-colors'>
+                    <a href='https://sidik219.github.io/sphinx-tof/' target='_blank' rel='noopener noreferrer'>Live View</a>
+                  </button>
+                  <button className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg transition-colors'>
+                    <a href='https://github.com/sidik219/sphinx-tof' target='_blank' rel='noopener noreferrer'>Code View</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 4 - AI Debugging System */}
+            <div className='basis-1/3 flex-1'>
+              <h3 className='text-md md:text-2xl font-medium'>
+                Personal Project - AI Debugging System
+              </h3>
+              <div className='relative w-full hover:scale-105 duration-300'>
+                <Image
+                  src={web4}
+                  className='rounded-lg object-cover border-4 border-[#bf1b47] mb-4'
+                  width='100%'
+                  height='100%'
+                  layout='responsive'
+                  alt='AI Debugging System Project'
+                />
+                <div className='absolute inset-0 flex items-center justify-center gap-4'>
+                  <button 
+                    className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg transition-colors'
+                    onClick={() => setSelectedTech('aiDebug')}
+                  >
+                    Tech Stack
+                  </button>
+                  <button className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg transition-colors'>
+                    <a href='#' target='_blank' rel='noopener noreferrer'>Live View</a>
+                  </button>
+                  <button className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg transition-colors'>
+                    <a href='https://github.com/sidik219/AI-Debugging-System-Springboot' target='_blank' rel='noopener noreferrer'>Code View</a>
                   </button>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Modal Pop-up untuk Tech Stack */}
+          {selectedTech && (
+            <div 
+              className='fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4'
+              onClick={() => setSelectedTech(null)}
+            >
+              <div 
+                className='bg-white dark:bg-gray-800 rounded-xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto'
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className='flex justify-between items-center mb-4'>
+                  <h3 className='text-2xl font-bold text-[#bf1b47]'>
+                    {techStacks[selectedTech].title} - Tech Stack
+                  </h3>
+                  <button 
+                    onClick={() => setSelectedTech(null)}
+                    className='text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white text-2xl'
+                  >
+                    ✕
+                  </button>
+                </div>
+                
+                <div className='space-y-4'>
+                  {selectedTech === 'aiDebug' ? (
+                    // AI Debugging System - Kategori
+                    <>
+                      <div>
+                        <h4 className='font-semibold text-lg text-[#bf1b47] mb-2'>Backend</h4>
+                        <div className='flex flex-wrap gap-2'>
+                          {techStacks.aiDebug.tech.backend.map((tech, i) => (
+                            <span key={i} className='bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-sm'>
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className='font-semibold text-lg text-[#bf1b47] mb-2'>Frontend</h4>
+                        <div className='flex flex-wrap gap-2'>
+                          {techStacks.aiDebug.tech.frontend.map((tech, i) => (
+                            <span key={i} className='bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-sm'>
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className='font-semibold text-lg text-[#bf1b47] mb-2'>AI Integration</h4>
+                        <div className='flex flex-wrap gap-2'>
+                          {techStacks.aiDebug.tech.ai.map((tech, i) => (
+                            <span key={i} className='bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-sm'>
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className='font-semibold text-lg text-[#bf1b47] mb-2'>Notification</h4>
+                        <div className='flex flex-wrap gap-2'>
+                          {techStacks.aiDebug.tech.notification.map((tech, i) => (
+                            <span key={i} className='bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-sm'>
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className='font-semibold text-lg text-[#bf1b47] mb-2'>Testing</h4>
+                        <div className='flex flex-wrap gap-2'>
+                          {techStacks.aiDebug.tech.testing.map((tech, i) => (
+                            <span key={i} className='bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full text-sm'>
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    // Project lain - List biasa
+                    <div className='flex flex-wrap gap-3'>
+                      {techStacks[selectedTech].tech.map((tech, i) => (
+                        <span key={i} className='bg-[#bf1b47] text-white px-4 py-2 rounded-full text-sm font-medium'>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
         </section>
 
         {/* Section Contact */}
