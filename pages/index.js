@@ -734,7 +734,7 @@ export default function Home() {
                     Tech Stack
                   </button>
                   <button className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg transition-colors'>
-                    <a href='#' target='https://ai-debug-system.vercel.app/' rel='noopener noreferrer'>Live View</a>
+                    <a href='https://ai-debug-system.vercel.app/' target='_blank' rel='noopener noreferrer'>Live View</a>
                   </button>
                   <button className='bg-[#bf1b47] hover:bg-[#f01c58] text-white px-4 py-3 rounded-lg transition-colors'>
                     <a href='https://github.com/sidik219/AI-Debugging-System-Springboot' target='_blank' rel='noopener noreferrer'>Code View</a>
