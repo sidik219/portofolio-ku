@@ -588,7 +588,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex items-center'>
-                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3 dark:text-white' /><p className='w-44 mx-auto text-gray-800 font-medium py-1 dark:text-white'>Ticketing Website, Orca Website, Career Website, Indobeauty Website and ESS APK</p>
+                <BiArrowFromLeft className='text-gray-800 w-10 h-10 mr-3 dark:text-white' /><p className='w-44 mx-auto text-gray-800 font-medium py-1 dark:text-white'>BTPN ARMS, Ticketing Website, Orca Website, Career Website, Indobeauty Website and ESS APK</p>
                 <div className='w-7/12'>
                   <p className="mt-1 text-md text-gray-500 dark:text-white">Juli 2024 – Januari 2025 | QA</p>
                 </div>
@@ -916,7 +916,7 @@ export default function Home() {
                   </div>
                   <div className='lg:col-span-2 mx-auto'>
                       <div className='flex'>
-                          <p>Made By. Shyrly</p>
+                          <p>Made By. Sidik</p>
                           {/* <img className='w-[25px] mx-px bg-transparent' src={Logo} alt="/" />
                           <p>{process.env.REACT_APP_COPYRIGHT_SACRIFICE}</p> */}
                       </div>
