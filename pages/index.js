@@ -456,7 +456,11 @@ export default function Home() {
           <div className='text-center'>
             <h3 className='text-3xl md:text-5xl pb-6 md:pb-10 text-[#bf1b47] font-medium drop-shadow-md'>Skill & Experience</h3>
             <p className='text-md md:text-xl py-4 md:py-5 leading-7 md:leading-8 text-gray-800 dark:text-white max-w-5xl mx-auto'>
-              Skills and experience in web development across various fields...
+              Skills and experience in web development across various fields. On the front-end, I commonly use <span className='text-[#bf1b47] font-medium'>CSS</span>, <span className='text-[#bf1b47] font-medium'>JavaScript</span>, <span className='text-[#bf1b47] font-medium'>Bootstrap</span>, and <span className='text-[#bf1b47] font-medium'>Tailwind</span> to create engaging user interfaces. 
+                
+              I am also becoming familiar with <span className='text-[#bf1b47] font-medium'>React.js</span> and <span className='text-[#bf1b47] font-medium'>Vue.js</span> for modern web applications. On the back-end, I have knowledge of programming languages such as <span className='text-[#bf1b47] font-medium'>PHP</span> and <span className='text-[#bf1b47] font-medium'>Spring</span>. 
+                
+              I can also manage databases using <span className='text-[#bf1b47] font-medium'>MySQL</span> and <span className='text-[#bf1b47] font-medium'>PostgreSQL</span>. Additionally, I have experience with the <span className='text-[#bf1b47] font-medium'>Leaflet.js</span> library for interactive map integration and use tools like <span className='text-[#bf1b47] font-medium'>GitHub</span>, <span className='text-[#bf1b47] font-medium'>Fork</span>, and <span className='text-[#bf1b47] font-medium'>Trello</span> for project management.
             </p>
           </div>
 
@@ -519,14 +523,14 @@ export default function Home() {
               </div>
               <ExperienceItem title="Workshop Humanizing Technology with UX Research" date="27 Feb 2021 – Audience" />
               <ExperienceItem title="Seminar Aplikasi GoKarang" date="12 Apr 2021 – Web Developer & Presenter" />
-              <ExperienceItem title="Workshop Teknologi Masa Depan..." date="18 Dec 2021 – Panitia" />
+              <ExperienceItem title="Workshop Teknologi Masa Depan dalam Intervensi Dini Anak Down Syndrome" date="18 Dec 2021 – Panitia" />
 
               <div className='text-center mt-8 md:mt-12'>
                 <h3 className='text-xl md:text-2xl font-medium pt-8 md:pt-16 pb-6 md:pb-8 dark:text-white'>Working</h3>
               </div>
               <ExperienceItem title="Programmer Trainee – Java, JDBC, JPA, Spring, PostgreSQL" date="Aug 2023" />
               <ExperienceItem title="Fullstack Developer – BTPN ARMS, BTPNS Jaga Online, Internal Project" date="Nov 2023 – Oct 2025" />
-              <ExperienceItem title="QA – Ticketing, Orca, Career, Indobeauty Websites & ESS APK" date="Jul 2024 – Jan 2025" />
+              <ExperienceItem title="QA – ARNS, Ticketing, Orca, Career, Indobeauty Websites & ESS APK" date="Jul 2024 – Jan 2025" />
               <ExperienceItem title="Backend Developer – RFID Integration" date="Feb 2025 – Oct 2025" />
             </div>
           </div>
