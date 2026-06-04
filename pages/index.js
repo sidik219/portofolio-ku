@@ -530,7 +530,7 @@ export default function Home() {
               </div>
               <ExperienceItem title="Programmer Trainee – Java, JDBC, JPA, Spring, PostgreSQL" date="Aug 2023" />
               <ExperienceItem title="Fullstack Developer – BTPN ARMS, BTPNS Jaga Online, Internal Project" date="Nov 2023 – Oct 2025" />
-              <ExperienceItem title="QA – ARNS, Ticketing, Orca, Career, Indobeauty Websites & ESS APK" date="Jul 2024 – Jan 2025" />
+              <ExperienceItem title="QA – ARMS, Ticketing, Orca, Career, Indobeauty Websites & ESS APK" date="Jul 2024 – Jan 2025" />
               <ExperienceItem title="Backend Developer – RFID Integration" date="Feb 2025 – Oct 2025" />
             </div>
           </div>
