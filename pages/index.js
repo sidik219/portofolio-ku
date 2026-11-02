@@ -418,7 +418,7 @@ export default function Home() {
             <h1 className='text-xl md:text-3xl dark:text-white'>Portofolio Ku</h1>
             <ul className='flex items-center'>
               <li>
-                <a className='retro-button flex items-center' href='../Sidik_Mulyana_Curriculum_Vitae.pdf' target='_blank'>
+                <a className='retro-button flex items-center' href='../Sidik_Mulyana_Resume.pdf' target='_blank'>
                   <AiFillFilePdf className='mr-1 md:mr-2 text-lg md:text-2xl' />My CV
                 </a>
               </li>
